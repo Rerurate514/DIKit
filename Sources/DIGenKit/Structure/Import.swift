@@ -20,8 +20,10 @@ struct Import {
                 }
 
                 let view = file.contents.utf8
-                let startIndex = view.index(view.startIndex, offsetBy: numericCast(token.offset))
-                let endIndex = view.index(startIndex, offsetBy: numericCast(token.length))
+                // let startIndex = view.index(view.startIndex, offsetBy: numericCast(token.offset))
+                // let endIndex = view.index(startIndex, offsetBy: numericCast(token.length))
+                let startIndex = view.index(view.startIndex, offsetBy: Int(token.offset))
+                let endIndex = view.index(startIndex, offsetBy: Int(token.length))
                 let value = String(view[startIndex..<endIndex])!
                 return value == "import" ? index : nil
             }
@@ -39,8 +41,10 @@ struct Import {
                 }
 
                 let view = file.contents.utf8
-                let startIndex = view.index(view.startIndex, offsetBy: numericCast(token.offset))
-                let endIndex = view.index(startIndex, offsetBy: numericCast(token.length))
+                // let startIndex = view.index(view.startIndex, offsetBy: numericCast(token.offset))
+                // let endIndex = view.index(startIndex, offsetBy: numericCast(token.length))
+                let startIndex = view.index(view.startIndex, offsetBy: Int(token.offset))
+                let endIndex = view.index(startIndex, offsetBy: Int(token.length))
                 return String(view[startIndex..<endIndex])!
             }
 
