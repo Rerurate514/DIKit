@@ -1,10 +1,3 @@
-//
-//  Import.swift
-//  DIGenKit
-//
-//  Created by Yosuke Ishikawa on 2017/11/13.
-//
-
 import Foundation
 import SourceKittenFramework
 
@@ -20,8 +13,9 @@ struct Import {
                 }
 
                 let view = file.contents.utf8
-                let startIndex = view.index(view.startIndex, offsetBy: Int(token.offset))
-                let endIndex = view.index(startIndex, offsetBy: Int(token.length))
+                // Convert ByteCount to Int64 first, then to Int
+                let startIndex = view.index(view.startIndex, offsetBy: Int(Int64(token.offset)))
+                let endIndex = view.index(startIndex, offsetBy: Int(Int64(token.length)))
                 let value = String(view[startIndex..<endIndex])!
                 return value == "import" ? index : nil
             }
@@ -39,8 +33,9 @@ struct Import {
                 }
 
                 let view = file.contents.utf8
-                let startIndex = view.index(view.startIndex, offsetBy: Int(token.offset))
-                let endIndex = view.index(startIndex, offsetBy: Int(token.length))
+                // Convert ByteCount to Int64 first, then to Int
+                let startIndex = view.index(view.startIndex, offsetBy: Int(Int64(token.offset)))
+                let endIndex = view.index(startIndex, offsetBy: Int(Int64(token.length)))
                 return String(view[startIndex..<endIndex])!
             }
 
