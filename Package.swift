@@ -12,7 +12,7 @@ let package = Package(
     .library(name: "DIGenKit", targets: ["DIGenKit"])
   ],
   dependencies: [
-    .package(url: "https://github.com/Rerurate514/SourceKitten.git", from: "0.23.0")
+    .package(url: "https://github.com/Rerurate514/SourceKitten.git")
   ],
   targets: [
     .target(name: "DIKit"),
