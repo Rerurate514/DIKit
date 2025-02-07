@@ -13,9 +13,9 @@ struct Import {
                 }
 
                 let view = file.contents.utf8
-                // Convert ByteCount to Int64 first, then to Int
-                let startIndex = view.index(view.startIndex, offsetBy: Int(Int64(token.offset)))
-                let endIndex = view.index(startIndex, offsetBy: Int(Int64(token.length)))
+                // Get the numeric value directly
+                let startIndex = view.index(view.startIndex, offsetBy: token.offset.value)
+                let endIndex = view.index(startIndex, offsetBy: token.length.value)
                 let value = String(view[startIndex..<endIndex])!
                 return value == "import" ? index : nil
             }
@@ -33,9 +33,9 @@ struct Import {
                 }
 
                 let view = file.contents.utf8
-                // Convert ByteCount to Int64 first, then to Int
-                let startIndex = view.index(view.startIndex, offsetBy: Int(Int64(token.offset)))
-                let endIndex = view.index(startIndex, offsetBy: Int(Int64(token.length)))
+                // Get the numeric value directly
+                let startIndex = view.index(view.startIndex, offsetBy: token.offset.value)
+                let endIndex = view.index(startIndex, offsetBy: token.length.value)
                 return String(view[startIndex..<endIndex])!
             }
 
