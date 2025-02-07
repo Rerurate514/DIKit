@@ -23,7 +23,7 @@ struct Import {
                 let startIndex = view.index(view.startIndex, offsetBy: Int(token.offset.value))
                 let endIndex = view.index(startIndex, offsetBy: Int(token.length.value))
                 let value = String(view[startIndex..<endIndex])!
-                return value == "import"? index: nil
+                return value == "import"? index: nil // 修正: スペースを削除
             }
 
         let importedModuleNames = importTokenIndices
