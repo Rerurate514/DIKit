@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
   name: "DIKit",
   platforms: [
-      .macOS(.v12), .iOS(.v9), .tvOS(.v9), .watchOS(.v2)
+      .macOS(.v10-11), .iOS(.v9), .tvOS(.v9), .watchOS(.v2)
   ],
   products: [
     .executable(name: "dikitgen", targets: ["dikitgen"]),
@@ -12,7 +12,7 @@ let package = Package(
     .library(name: "DIGenKit", targets: ["DIGenKit"])
   ],
   dependencies: [
-    .package(url: "https://github.com/Rerurate514/SourceKitten.git",.exact("0.36.1"))
+    .package(url: "https://github.com/Rerurate514/SourceKitten.git",.exact("0.23.1"))
   ],
   targets: [
     .target(name: "DIKit"),
